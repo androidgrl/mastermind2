@@ -1,6 +1,7 @@
 require_relative 'mastermind'
 require_relative 'printer'
 require_relative 'time'
+require_relative 'menu'
 require 'benchmark'
 
 printer = Printer.new
@@ -18,27 +19,14 @@ loop do
     mm = Mastermind.new
     time = Time.new
     time.start_time
+    menu = Menu.new(mm, printer, time)
     # make a menu class
-      until mm.won
-        printer.recurring_guess_prompt
-        input = gets.chomp.downcase
-        mm.guesses += 1
-        case
-        when input == "c" || input == "cheat"
-          puts "#{mm.code.join}"
-        when input == "q" || input == "quit"
-          printer.mid_game_goodbye
-          break
-        when input.length < 4
-          printer.input_length_too_short
-        when input.length > 4
-          printer.input_length_too_long
-        when mm.win?(input)
-          mm.won = true
-          time.end_time
-          printer.congratulations(mm.code.join, mm.guesses, time.elapsed_time.to_i/60, (time.elapsed_time % 60).round)
-        else
-          puts "#{input} has #{mm.check_colors(input)} of the correct elements in #{mm.check_positions(input)} of the correct positions"
+      catch(:quit) do
+        until mm.won
+          printer.recurring_guess_prompt
+          input = gets.chomp.downcase
+          mm.guesses += 1
+          menu.handle_input(input)
         end
       end
     printer.ask_play_again
