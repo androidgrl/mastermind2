@@ -67,34 +67,3 @@ class Mastermind
   end
 
 end
-
-# class Time
-#
-#   def start_time
-#     @start ||= Time.now
-#   end
-#
-#   def end_time
-#     @end ||= Time.now
-#   end
-#
-#   def elapsed_time
-#     end_time - start_time
-#   end
-#
-# end
-
-
-# mm.test_check_colors("rrrr")     # => 1
-# mm.test_check_positions("rrry")  # => 2
-# mm.test_win?("rgby")             # => true
-#
-# mm = Mastermind.new         # => #<Mastermind:0x007ff463096d98 @colors=["r", "r", "r", "r", "g", "g", "g", "g", "b", "b", "b", "b", "y", "y", "y", "y"], @code=[]>
-# mm.create_code              # => ["y", "g", "r", "y"]
-# mm.check_colors("rrrr")     # => 1
-# mm.check_positions("rrrr")  # => 1
-# mm.win?("rrrr")             # => false
-
-# mm = Mastermind.new  # => #<Mastermind:0x007fd74088ffa8 @colors=["r", "r", "r", "r", "g", "g", "g", "g", "b", "b", "b", "b", "y", "y", "y", "y"], @code=[]>
-# mm.create_code       # => ["b", "b", "g", "y"]
-# mm.code              # => ["b", "b", "g", "y"]

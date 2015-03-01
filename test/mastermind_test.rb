@@ -1,8 +1,7 @@
 require "minitest"
 require "minitest/autorun"
 require "minitest/pride"
-require_relative "mastermind"
-require_relative 'time'
+require_relative "../lib/mastermind"
 
 class MastermindTest < Minitest::Test
 
@@ -44,40 +43,3 @@ class MastermindTest < Minitest::Test
     refute @mm.test_win?("bbrr")
   end
 end
-
-class TestTime < Minitest::Test
-  def test_it_exists
-    assert Time
-  end
-
-  def test_elapsed_time_is_the_difference_between_end_time_and_start_time_for_half_second
-    time = Time.new
-
-    time.start_time
-    sleep(0.5)
-    time.end_time
-
-    assert time.elapsed_time > 0.5
-  end
-
-  def test_elapsed_time_is_the_difference_between_end_time_and_start_time_for_quarter_second
-    time = Time.new
-
-    time.start_time
-    sleep(0.25)
-    time.end_time
-
-    assert time.elapsed_time > 0.25
-  end
-
-end
-
-
-  #time attribute
-  #stop time method
-  #elapsed time method
-  # which pieces are state (@time, @end_time)
-  # which pieces are behavior -- #start_time (starts the clock), #stop_time (stops the clock)
-  # which pieces are calculations based on existing data -- #elapsed_time (calculate total time based on @time and @end_time)
-  # assert @mm.elapsed_time > 0.25
-  # assert @mm.elapsed_time < 0.5
