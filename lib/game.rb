@@ -1,3 +1,6 @@
+#now when quitting in the middle of a game it asks the (printer.ask_play_again) instead of quitting
+#and (printer.mid_game_goodbye)
+
 class Game
   def initialize(mm, printer, time)
     @mm = mm

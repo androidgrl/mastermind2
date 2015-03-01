@@ -37,7 +37,9 @@ class Menu
 
   def play
     start_game
-    ask_play_again
+    if mm.won == true
+      ask_play_again
+    end
   end
 
   def start_game
