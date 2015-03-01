@@ -12,3 +12,4 @@ menu.display_intro
 
 
 #save scores in a csv file
+#make it into a gem

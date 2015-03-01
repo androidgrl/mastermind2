@@ -22,6 +22,8 @@ class Game
       cheat
     when input == "q" || input == "quit"
       quit
+    when valid_color?(input) != true
+      print_color_error
     when invalid_length?(input)
       print_length_error(input)
     when mm.win?(input)
@@ -56,6 +58,16 @@ class Game
     else
       printer.input_length_too_long
     end
+  end
+
+  def valid_color?(input)
+    input.chars.all? do |e|
+      ["r", "g", "b", "y"].include?(e)
+    end
+  end
+
+  def print_color_error
+    printer.input_invalid_color
   end
 
   def victory!
