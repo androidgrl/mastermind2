@@ -4,6 +4,8 @@
 # (g)reen, (b)lue, and (y)ellow.  Use (q)uit at any time to end the game.
 # Would you like to (p)lay again or (q)uit?
 
+# fixed but now it still has the same code sequence as before
+
 class Game
   def initialize(mm, printer, time)
     @mm = mm

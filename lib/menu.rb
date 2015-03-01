@@ -52,6 +52,7 @@ class Menu
     if input == "p" || input == "play"
       mm.won = false
       printer.go_again
+      mm.create_code
       play
     elsif input == "q" || input == "quit"
       printer.goodbye

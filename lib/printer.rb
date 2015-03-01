@@ -14,7 +14,7 @@ class Printer
   end
 
   def main_menu_query
-    puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?".green.bold
+    puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?".red.bold
   end
 
   def admonishment
@@ -38,15 +38,15 @@ class Printer
   end
 
   def input_length_too_short
-    puts "Your entry is too short, please enter 4 characters.".red.bold
+    puts "Your entry is too short, please enter 4 characters.".blue.bold
   end
 
   def input_length_too_long
-    puts "Your entry is too long, please enter 4 characters.".red.bold
+    puts "Your entry is too long, please enter 4 characters.".blue.bold
   end
 
   def input_invalid_color
-    puts "Your entry contains a color that is not (r)ed, (b)lue, (g)reen or (y)ellow"
+    puts "Your entry contains a color that is not (r)ed, (b)lue, (g)reen or (y)ellow".green.bold
   end
 
   def congratulations(code, guesses, minutes, seconds)
