@@ -49,6 +49,10 @@ class Printer
     puts "Your entry contains a color that is not (r)ed, (b)lue, (g)reen or (y)ellow".green.bold
   end
 
+  def guess_stats(input, colors, positions)
+    puts "#{input} has #{colors} of the correct elements in #{positions} of the correct positions".red.bold
+  end
+
   def congratulations(code, guesses, minutes, seconds)
     print "\e[2J\e[f"
     puts "..######...#######..##....##..######...########.....###....########.##..........###....########.####..#######..##....##..######..####.####.####".red.blink
@@ -62,7 +66,7 @@ class Printer
   end
 
   def ask_play_again
-    puts "Would you like to (p)lay again or (q)uit?".blue.bold
+    puts "Would you like to (p)lay again or (q)uit?".green.bold
   end
 
   def go_again
