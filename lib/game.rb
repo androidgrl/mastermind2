@@ -1,3 +1,9 @@
+#after winning, it says congratulations and then asks to quit or play again (using printer.ask_play_again.. not printer.main_menu_query), quit works fine, but, play again
+# Here we go again!
+# I have generated a beginner sequence with four elements made up of: (r)ed,
+# (g)reen, (b)lue, and (y)ellow.  Use (q)uit at any time to end the game.
+# Would you like to (p)lay again or (q)uit?
+
 class Game
   def initialize(mm, printer, time)
     @mm = mm

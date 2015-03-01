@@ -14,7 +14,7 @@ class Printer
   end
 
   def main_menu_query
-    puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?".bold
+    puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?".green.bold
   end
 
   def admonishment
@@ -62,7 +62,7 @@ class Printer
   end
 
   def ask_play_again
-    puts "Would you like to (p)lay again or (q)uit?".red.bold
+    puts "Would you like to (p)lay again or (q)uit?".blue.bold
   end
 
   def go_again

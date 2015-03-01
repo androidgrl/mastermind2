@@ -50,6 +50,7 @@ class Menu
     printer.ask_play_again
     input = gets.chomp.downcase
     if input == "p" || input == "play"
+      mm.won = false
       printer.go_again
       play
     elsif input == "q" || input == "quit"
