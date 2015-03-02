@@ -1,6 +1,3 @@
-#now when quitting in the middle of a game it asks the (printer.ask_play_again) instead of quitting
-#and (printer.mid_game_goodbye)
-
 class Game
   def initialize(mm, printer, time)
     @mm = mm
@@ -81,6 +78,5 @@ class Game
 
   def print_guess_stats(input)
     printer.guess_stats(input, mm.check_colors(input), mm.check_positions(input))
-    #puts "#{input} has #{mm.check_colors(input)} of the correct elements in #{mm.check_positions(input)} of the correct positions"
   end
 end

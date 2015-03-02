@@ -49,6 +49,7 @@ class Menu
   end
 
   def ask_play_again
+    mm.guesses = 0
     printer.ask_play_again
     input = gets.chomp.downcase
     if input == "p" || input == "play"
