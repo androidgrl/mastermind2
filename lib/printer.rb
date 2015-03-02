@@ -34,7 +34,7 @@ class Printer
   end
 
   def mid_game_goodbye
-    puts "Goodbye! Sorry to see you leave so soon!"
+    puts "Goodbye! Sorry to see you leave so soon!".blue.bold
   end
 
   def input_length_too_short

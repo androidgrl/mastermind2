@@ -5,10 +5,13 @@ require_relative 'printer'
 require_relative 'time'
 require 'benchmark'
 
-printer = Printer.new
-menu = Menu.new(printer)
-menu.display_intro
-
+class Runner
+  def run
+    printer = Printer.new
+    menu = Menu.new(printer)
+    menu.display_intro
+  end
+end
 
 
 #save scores in a csv file
