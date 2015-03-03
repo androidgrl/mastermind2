@@ -8,7 +8,7 @@ class Game
   def play
     catch(:quit) do
       until mm.won
-        printer.recurring_guess_prompt
+        puts printer.recurring_guess_prompt
         input = gets.chomp.downcase
         mm.guesses += 1
         handle_input(input)
@@ -44,7 +44,7 @@ class Game
   end
 
   def quit
-    printer.mid_game_goodbye
+    puts printer.mid_game_goodbye
     throw :quit
   end
 
@@ -54,9 +54,9 @@ class Game
 
   def print_length_error(input)
     if input.length < 4
-      printer.input_length_too_short
+      puts printer.input_length_too_short
     else
-      printer.input_length_too_long
+      puts printer.input_length_too_long
     end
   end
 
@@ -67,7 +67,7 @@ class Game
   end
 
   def print_color_error
-    printer.input_invalid_color
+    puts printer.input_invalid_color
   end
 
   def victory!
@@ -77,6 +77,7 @@ class Game
   end
 
   def print_guess_stats(input)
-    printer.guess_stats(input, mm.check_colors(input), mm.check_positions(input))
+    puts printer.guess_stats(input, mm.check_colors(input), mm.check_positions(input))
   end
+  
 end

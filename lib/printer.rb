@@ -14,43 +14,43 @@ class Printer
   end
 
   def main_menu_query
-    puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?".red.bold
+    "Would you like to (p)lay, read the (i)nstructions, or (q)uit?".red.bold
   end
 
   def admonishment
-    puts "Nobody likes a quitter.".cyan.bold
+    "Nobody likes a quitter.".cyan.bold
   end
 
   def instructions
-    puts "At the beginning of the game, a series of four colors (Red, Green, Blue, Yellow) is generated.\nYour goal is to guess the four colors and the order that they are in.  Enter your guess in the following format: RRBY.\nTry to guess the correct colors and order in the shortest time possible with the least number of guesses".bold
+    "At the beginning of the game, a series of four colors (Red, Green, Blue, Yellow) is generated.\nYour goal is to guess the four colors and the order that they are in.  Enter your guess in the following format: RRBY.\nTry to guess the correct colors and order in the shortest time possible with the least number of guesses".bold
   end
 
   def first_guess_prompt
-    puts "I have generated a beginner sequence with four elements made up of: (r)ed,\n(g)reen, (b)lue, and (y)ellow.  Use (q)uit at any time to end the game.".bold
+    "I have generated a beginner sequence with four elements made up of: (r)ed,\n(g)reen, (b)lue, and (y)ellow.  Use (q)uit at any time to end the game.".bold
   end
 
   def recurring_guess_prompt
-    puts "Enter your guess".red.bold.blink
+    "Enter your guess".red.bold.blink
   end
 
   def mid_game_goodbye
-    puts "Goodbye! Sorry to see you leave so soon!".blue.bold
+    "Goodbye! Sorry to see you leave so soon!".blue.bold
   end
 
   def input_length_too_short
-    puts "Your entry is too short, please enter 4 characters.".blue.bold
+    "Your entry is too short, please enter 4 characters.".blue.bold
   end
 
   def input_length_too_long
-    puts "Your entry is too long, please enter 4 characters.".blue.bold
+    "Your entry is too long, please enter 4 characters.".blue.bold
   end
 
   def input_invalid_color
-    puts "Your entry contains a color that is not (r)ed, (b)lue, (g)reen or (y)ellow".green.bold
+    "Your entry contains a color that is not (r)ed, (b)lue, (g)reen or (y)ellow".green.bold
   end
 
   def guess_stats(input, colors, positions)
-    puts "#{input} has #{colors} of the correct elements in #{positions} of the correct positions".red.bold
+    "#{input} has #{colors} of the correct elements in #{positions} of the correct positions".red.bold
   end
 
   def congratulations(code, guesses, minutes, seconds)
@@ -66,11 +66,11 @@ class Printer
   end
 
   def ask_play_again
-    puts "Would you like to (p)lay again or (q)uit?".green.bold
+    "Would you like to (p)lay again or (q)uit?".green.bold
   end
 
   def go_again
-    puts "Here we go again!".green.bold
+    "Here we go again!".green.bold
   end
 
   def goodbye

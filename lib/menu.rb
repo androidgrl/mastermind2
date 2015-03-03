@@ -1,3 +1,5 @@
+#require 'colorize'
+
 class Menu
   def initialize(printer)
     @printer = printer
@@ -6,10 +8,24 @@ class Menu
     @game = Game.new(mm, printer, time)
   end
 
-  def display_intro
-    printer.greeting
-    main_menu
+  def main_menu
+    puts printer.main_menu_query
+    answer = gets.chomp.downcase
+    case answer
+    when "q", "quit"
+      what_a_quitter
+    when "i", "instructions"
+      puts printer.instructions
+      main_menu
+    when "p", "play"
+      play
+    end
   end
+
+  # def display_intro
+  #   printer.greeting
+  #   main_menu
+  # end
 
   protected
 
@@ -17,22 +33,22 @@ class Menu
 
   private
 
-  def main_menu
-    printer.main_menu_query
-    answer = gets.chomp.downcase
-    case answer
-    when "q", "quit"
-      what_a_quitter
-    when "i", "instructions"
-      printer.instructions
-      main_menu
-    when "p", "play"
-      play
-    end
-  end
+  # def main_menu
+  #   printer.main_menu_query
+  #   answer = gets.chomp.downcase
+  #   case answer
+  #   when "q", "quit"
+  #     what_a_quitter
+  #   when "i", "instructions"
+  #     printer.instructions
+  #     main_menu
+  #   when "p", "play"
+  #     play
+  #   end
+  # end
 
   def what_a_quitter
-    printer.admonishment
+    puts printer.admonishment
   end
 
   def play
@@ -43,18 +59,18 @@ class Menu
   end
 
   def start_game
-    printer.first_guess_prompt
+    puts printer.first_guess_prompt
     time.start_time
     game.play
   end
 
   def ask_play_again
     mm.guesses = 0
-    printer.ask_play_again
+    puts printer.ask_play_again
     input = gets.chomp.downcase
     if input == "p" || input == "play"
       mm.won = false
-      printer.go_again
+      puts printer.go_again
       mm.create_code
       play
     elsif input == "q" || input == "quit"
